@@ -19,7 +19,7 @@ public class Message {
     private String content;
 
     @NotNull
-    private Date posteddate;
+    private String posteddate;
 
     @NotNull
     @Size(min=1)
@@ -41,11 +41,11 @@ public class Message {
         this.content = content;
     }
 
-    public Date getPosteddate() {
+    public String getPosteddate() {
         return posteddate;
     }
 
-    public void setPosteddate(Date posteddate) {
+    public void setPosteddate(String posteddate) {
         this.posteddate = posteddate;
     }
 
