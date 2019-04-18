@@ -13,7 +13,12 @@
 </nav>
 <h5>Content: </h5><span th:text="${message.content}"></span><br />
 <h5>Posted Date:</h5><span th:text="${message.posteddate}"></span><br />
-<h5>Sent By:</h5><span th:text="${message.sentby}"></span><br /><br />
+<h5>Sent By:</h5><span th:text="${message.sentby}"></span><br />
+<div th:if="${message.picture} != null">
+    <img th:src="${message.picture}" />
+    <hr />
+</div>
+<br />
 <hr/>
 <p>Want to cut the crap?</p>
 <a th:href="@{/delete/{id}(id=${message.id})}"> Delete this bull!</a>

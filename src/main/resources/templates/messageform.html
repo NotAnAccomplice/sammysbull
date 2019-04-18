@@ -11,10 +11,11 @@
     <a href="/">Home</a><br />
     <a href="/add">Post new Bull!</a><br />
 </nav>
-    <form action="#"
-          th:action="@{/process}"
+    <form action="/add"
+          th:action="@{/add}"
           th:object="${message}"
-          method="post">
+          method="post"
+          enctype="multipart/form-data">
         <input type = "hidden" th:field="*{id}" />
         Content: <input type="text" th:field="*{content}" />
         <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span> <br />
@@ -22,6 +23,7 @@
         <span th:if="${#fields.hasErrors('posteddate')}" th:errors="*{posteddate}"></span> <br />
         Sent By: <input type="text" th:field="*{sentby}" />
         <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span> <br />
+        <input type="file" name="file" /><br />
         <br />
         <input type = "submit" value = "Submit" />
     </form>

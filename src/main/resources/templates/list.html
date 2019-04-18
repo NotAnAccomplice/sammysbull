@@ -22,10 +22,19 @@
         <td th:text="${message.posteddate}"></td>
         <td th:text="${message.sentby}"></td>
         <td>
+            <div th:each="actor : ${messages}">
+                <div th:if="${message.picture} != null">
+                    <img th:src="${message.picture}" />
+                    <hr />
+                </div>
+            </div>
+        </td>
+        <td>
             <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
             <a th:href="@{/detail/{id}(id=${message.id})}">Details</a>
             <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
         </td>
+
     </tr>
 </table>
 </div>

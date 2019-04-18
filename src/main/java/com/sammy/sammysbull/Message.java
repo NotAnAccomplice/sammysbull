@@ -25,6 +25,8 @@ public class Message {
     @Size(min=1)
     private String sentby;
 
+    private String picture;
+
     public long getId() {
         return id;
     }
@@ -55,5 +57,13 @@ public class Message {
 
     public void setSentby(String sentby) {
         this.sentby = sentby;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
